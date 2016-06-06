@@ -1,0 +1,11 @@
+<% content_for :body_content_left do %>
+  <ul id="event_venues">
+    <% @event_venues.each do |event_venue| %>
+      <li>
+        <%= link_to event_venue.venue_name, event_venue_path(event_venue) %>
+      </li>
+    <% end %>
+  </ul>
+<% end %>
+
+<%= render :partial => "/shared/content_page" %>

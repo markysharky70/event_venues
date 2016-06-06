@@ -1,0 +1,25 @@
+en:
+  shared:
+    admin:
+      image_picker:
+        image: image
+  plugins:
+    event_venues:
+      title: Venues
+  admin:
+    event_venues:
+      actions:
+        create_new: Add New Venue
+        reorder: Reorder Venues
+        reorder_done: Done Reordering Venues
+      records:
+        title: Venues
+        sorry_no_results: Sorry! There are no results found.
+        no_items_yet: There are no Venues yet. Click "Add New Venue" to add your first venue.
+      event_venue:
+        view_live_html: View this venue live <br/><em>(opens in a new window)</em>
+        edit: Edit this venue
+        delete: Remove this venue forever
+  event_venues:
+    show:
+      other: Other Venues

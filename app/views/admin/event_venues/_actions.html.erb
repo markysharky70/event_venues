@@ -1,0 +1,28 @@
+<ul>
+  <% if Admin::EventVenuesController.searchable? %>
+    <li>
+      <%= render :partial => "/shared/admin/search",
+                  :locals => {
+                    :url => admin_event_venues_path
+                  } %>
+    </li>
+  <% end %>
+  <li>
+    <%= link_to t('.create_new'), new_admin_event_venue_path,
+                 :class => "add_icon" %>
+  </li>
+<% if !searching? and Admin::EventVenuesController.sortable? and EventVenue.count > 1 %>
+  <li>
+    <%= link_to t('.reorder', :what => "EventVenues"),
+                 admin_event_venues_path,
+                 :id => "reorder_action",
+                 :class => "reorder_icon" %>
+
+    <%= link_to t('.reorder_done', :what => "EventVenues"),
+                 admin_event_venues_path,
+                 :id => "reorder_action_done",
+                 :style => "display: none;",
+                 :class => "reorder_icon" %>
+  </li>
+<% end %>
+</ul>

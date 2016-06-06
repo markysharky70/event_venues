@@ -1,0 +1,39 @@
+<% content_for :body_content_title do %>
+  <%= @event_venue.venue_name %>
+<% end %>
+
+<% content_for :body_content_left do %>
+  <section>
+    <h1>Venue Name</h1>
+    <p>
+      <%=raw @event_venue.venue_name %>
+    </p>
+  </section>
+  <section>
+    <h1>Venue Address</h1>
+    <p>
+      <%=raw @event_venue.address %>
+    </p>
+  </section>
+  <section>
+    <h1>Venue Calendar Color</h1>
+    <p>
+      <%=raw @event_venue.calendar_color %>
+    </p>
+  </section>
+<% end %>
+
+<% content_for :body_content_right do %>
+  <aside>
+    <h2><%= t('.other') %></h2>
+    <ul id="event_venues">
+      <% @event_venues.each do |event_venue| %>
+        <li>
+          <%= link_to event_venue.venue_name, event_venue_path(event_venue) %>
+        </li>
+      <% end %>
+    </ul>
+  </aside>
+<% end %>
+
+<%= render :partial => "/shared/content_page" %>
